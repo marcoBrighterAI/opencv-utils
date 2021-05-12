@@ -1,5 +1,5 @@
 # USAGE
-# python load_image_opencv.py --image jurassic_park.png --output jurassic_park.jpg
+# python load_image_opencv.py --image lena.png --output lena.jpg
 
 # import the necessary packages
 import argparse
