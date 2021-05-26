@@ -1,5 +1,5 @@
 # USAGE
-# python load_image_opencv.py --image lena.png --output lena.jpg
+# python load_image.py --image assets/lena.png --output assets/lena.jpg
 
 # import the necessary packages
 import argparse

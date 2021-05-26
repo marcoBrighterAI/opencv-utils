@@ -7,7 +7,7 @@ import cv2
 
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--image", type=str, default="lena.png",
+ap.add_argument("-i", "--image", type=str, default="assets/lena.png",
                 help="path to the input image")
 args = vars(ap.parse_args())
 
