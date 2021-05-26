@@ -1,5 +1,5 @@
 # USAGE
-# python opencv_translate.py
+# python translate.py
 
 # import the necessary packages
 import numpy as np
