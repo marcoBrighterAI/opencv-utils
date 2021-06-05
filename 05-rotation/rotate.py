@@ -1,9 +1,11 @@
 # USAGE
-# python rotate_simple.py
+# python rotate.py
 
 # import the necessary packages
 import argparse
 import cv2
+
+from utils import rotate, rotate_bound
 
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
@@ -37,4 +39,14 @@ cv2.waitKey(0)
 M = cv2.getRotationMatrix2D((10, 10), 45, 1.0)
 rotated = cv2.warpAffine(image, M, (w, h))
 cv2.imshow("Rotated by Arbitrary Point", rotated)
+cv2.waitKey(0)
+
+# use our utility function to rotate an image 180 degrees
+rotated = rotate(image, 180)
+cv2.imshow("Rotated by 180 Degrees", rotated)
+
+# rotate our image by 33 degrees counterclockwise, ensuring the
+# entire rotated image still views in the viewing area
+rotated = rotate_bound(image, -33)
+cv2.imshow("Rotated Without Cropping", rotated)
 cv2.waitKey(0)
