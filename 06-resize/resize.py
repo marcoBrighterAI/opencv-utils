@@ -5,6 +5,8 @@
 import argparse
 import cv2
 
+from utils import resize
+
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--image", type=str, default="assets/lena.png",
@@ -13,7 +15,6 @@ args = vars(ap.parse_args())
 
 # load the original input image and display it to our screen
 image = cv2.imread(args["image"])
-print(image.shape)
 cv2.imshow("Original", image)
 cv2.waitKey(0)
 
@@ -38,14 +39,6 @@ resized = cv2.resize(image, dim, interpolation=cv2.INTER_AREA)
 cv2.imshow("Resized (Height)", resized)
 cv2.waitKey(0)
 
-# calculating the ratio each and every time we want to resize an
-# image is a real pain, so let's use the imutils convenience
-# function which will *automatically* maintain our aspect ratio
-# for us
-resized = imutils.resize(image, width=100)
-cv2.imshow("Resized via imutils", resized)
-cv2.waitKey(0)
-
 # construct the list of interpolation methods in OpenCV
 methods = [
     ("cv2.INTER_NEAREST", cv2.INTER_NEAREST),
@@ -59,7 +52,7 @@ for (name, method) in methods:
     # increase the size of the image by 3x using the current
     # interpolation method
     print("[INFO] {}".format(name))
-    resized = imutils.resize(image, width=image.shape[1] * 3,
-                             inter=method)
+    resized = resize(image, width=image.shape[1] * 3,
+                     inter=method)
     cv2.imshow("Method: {}".format(name), resized)
     cv2.waitKey(0)
