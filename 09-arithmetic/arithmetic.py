@@ -8,8 +8,8 @@ import cv2
 
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--image", type=str, default="grand_canyon.png",
-	help="path to the input image")
+ap.add_argument("-i", "--image", type=str, default="assets/grand_canyon.png",
+                help="path to the input image")
 args = vars(ap.parse_args())
 
 # images are NumPy arrays stored as unsigned 8-bit integers (unit8)
@@ -33,6 +33,7 @@ print("wrap around: {}".format(subtracted))
 # load the original input image and display it to our screen
 image = cv2.imread(args["image"])
 cv2.imshow("Original", image)
+cv2.waitKey(0)
 
 # increasing the pixel intensities in our input image by 100 is
 # accomplished by constructing a NumPy array that has the *same
@@ -41,6 +42,7 @@ cv2.imshow("Original", image)
 M = np.ones(image.shape, dtype="uint8") * 100
 added = cv2.add(image, M)
 cv2.imshow("Lighter", added)
+cv2.waitKey(0)
 
 # similarly, we can subtract 50 from all pixels in our image and make it
 # darker
