@@ -16,6 +16,7 @@ args = vars(ap.parse_args())
 image = cv2.imread(args["image"])
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 cv2.imshow("Original", image)
+cv2.waitKey(0)
 
 # apply a series of erosions
 for i in range(0, 3):
@@ -26,6 +27,7 @@ for i in range(0, 3):
 # close all windows to cleanup the screen
 cv2.destroyAllWindows()
 cv2.imshow("Original", image)
+cv2.waitKey(0)
 
 # apply a series of dilations
 for i in range(0, 3):
@@ -37,6 +39,7 @@ for i in range(0, 3):
 # of kernels sizes that will be applied to the image
 cv2.destroyAllWindows()
 cv2.imshow("Original", image)
+cv2.waitKey(0)
 kernelSizes = [(3, 3), (5, 5), (7, 7)]
 
 # loop over the kernels sizes
@@ -52,6 +55,7 @@ for kernelSize in kernelSizes:
 # close all windows to cleanup the screen
 cv2.destroyAllWindows()
 cv2.imshow("Original", image)
+cv2.waitKey(0)
 
 # loop over the kernels sizes again
 for kernelSize in kernelSizes:
@@ -66,6 +70,7 @@ for kernelSize in kernelSizes:
 # close all windows to cleanup the screen
 cv2.destroyAllWindows()
 cv2.imshow("Original", image)
+cv2.waitKey(0)
 
 # loop over the kernels a final time
 for kernelSize in kernelSizes:
