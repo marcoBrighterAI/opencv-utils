@@ -16,6 +16,7 @@ args = vars(ap.parse_args())
 # size and amount of blurring)
 image = cv2.imread(args["image"])
 cv2.imshow("Original", image)
+cv2.waitKey(0)
 kernelSizes = [(3, 3), (9, 9), (15, 15)]
 
 # loop over the kernel sizes
@@ -29,6 +30,7 @@ for (kX, kY) in kernelSizes:
 # close all windows to cleanup the screen
 cv2.destroyAllWindows()
 cv2.imshow("Original", image)
+cv2.waitKey(0)
 
 # loop over the kernel sizes again
 for (kX, kY) in kernelSizes:
@@ -40,6 +42,7 @@ for (kX, kY) in kernelSizes:
 # close all windows to cleanup the screen
 cv2.destroyAllWindows()
 cv2.imshow("Original", image)
+cv2.waitKey(0)
 
 # loop over the kernel sizes a final time
 for k in (3, 9, 15):
