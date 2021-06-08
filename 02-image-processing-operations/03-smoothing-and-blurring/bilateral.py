@@ -15,6 +15,7 @@ args = vars(ap.parse_args())
 # bilateral filtering parameters that we are going to explore
 image = cv2.imread(args["image"])
 cv2.imshow("Original", image)
+cv2.waitKey(0)
 params = [(11, 21, 7), (11, 41, 21), (11, 61, 39)]
 
 # loop over the diameter, sigma color, and sigma space
