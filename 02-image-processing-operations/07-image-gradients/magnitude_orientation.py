@@ -1,5 +1,5 @@
 # USAGE
-# python opencv_magnitude_orientation.py --image images/coins02.png
+# python magnitude_orientation.py --image images/coins02.png
 
 # import the necessary packages
 import matplotlib.pyplot as plt
